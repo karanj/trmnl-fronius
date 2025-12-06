@@ -1,0 +1,36 @@
+{
+  "Body": {
+    "Data": {
+      "Site": {
+        "Mode": "produce-only",
+        "P_Grid": -2500.5,
+        "P_Load": -3500.2,
+        "P_PV": 6000.7,
+        "rel_SelfConsumption": 57.14,
+        "rel_Autonomy": 100,
+        "E_Day": 15000,
+        "E_Year": 5500000,
+        "E_Total": 75000000,
+        "Meter_Location": "grid"
+      },
+      "Inverters": {
+        "1": {
+          "DT": 123,
+          "P": 6000.7,
+          "E_Day": 15000,
+          "E_Year": 5500000,
+          "E_Total": 75000000
+        }
+      }
+    }
+  },
+  "Head": {
+    "RequestArguments": {},
+    "Status": {
+      "Code": 0,
+      "Reason": "",
+      "UserMessage": ""
+    },
+    "Timestamp": "2025-12-04T10:30:00+00:00"
+  }
+}

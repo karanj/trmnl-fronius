@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://usetrmnl.com/css/latest/plugins.css">
+  <script src="https://usetrmnl.com/js/latest/plugins.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;350;375;400;450;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="environment trmnl">
+  <div class="screen">
+    <div class="view view--full">
+      <div class="layout">
+        <div class="columns">
+          <div class="column">
+            <div class="markdown">
+              <span class="title">Solar Production</span>
+
+              {% assign current_power = current_power | default: 0 %}
+
+              <div class="content content--center" style="font-size: 4em; font-weight: 700; margin: 40px 0;">
+                {{ current_power }} kW
+              </div>
+
+              <span class="label" style="font-size: 1.2em;">Current Power</span>
+
+              <div style="margin-top: 60px;">
+                {% assign daily_total = daily_total | default: 0 %}
+
+                <div class="content" style="font-size: 2.5em; font-weight: 600;">
+                  {{ daily_total }} kWh
+                </div>
+                <span class="label label--underline">Total Today</span>
+              </div>
+
+              {% if timestamp %}
+                <div style="margin-top: 30px; font-size: 0.75em; opacity: 0.6;">
+                  {% assign ts = timestamp | date: "%b %d, %I:%M %p" %}
+                  <span class="label">Updated: {{ ts }}</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="title_bar">
+        <img class="image" src="https://usetrmnl.com/images/plugins/trmnl--render.svg" />
+        <span class="title">Fronius Solar</span>
+        <span class="instance">{{ trmnl.plugin_instance_name | default: "Solar Production" }}</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
